@@ -1,112 +1,122 @@
-// Типы данных в js
-// всего 8 типов данных:
-// 1) 7 примитивные типы данных:
-    // 1) number
-    // 2) string
-    // 3) boolean
-    // 4) null
-    // 5) undefined
-    // 6) BigInt
-    // 7) symbol
+// Условия в js
+// Прописываются с помощью конструктора if else 
 
-// 2) 1 ссылочный тип данных:
-    // object
-//_________________________________________________________________________________________________
+// const userName = prompt("Введите желаемый никнейм")
+// const userAge = prompt("Введите свой возраст")
 
-// Javascript - является динамически типизированным языком 
-// let num;
-// console.log(typeof num);
+// console.log(userName);
+// console.log(userAge);
 
-// num = 2;
-// console.log(typeof num);
-
-// num = ""
-// console.log(typeof num)
-
-
-//BigInt - позволяет работать с большими числами выше и меньше 9007199254740991
-// console.log(BigInt(987654321987654) + BigInt(1));
-// console.log(BigInt(987654321987654) + BigInt(4));
-
-//Boolean - может быть только двумя значениями это (true / false) логический тип данных для выполнения условий  
-
-// 0/null/undefined/''/""/`` = false
-// console.log(Boolean());
-
-// console.log(50 < 1);
-
-// const age = prompt("Введите возраст: ")
-// if(age >= 18) {
-//     console.log("Добро пожаловать")
+// if(userAge >= 18) {
+//     console.log("Добро пожаловать!")
+// }else if (userAge == 16) {
+//     console.log("Сервис недоступен...")
 // }else {
-//     console.log("Школьник")
-// }
-// console.log(age);
-
-
-// String - тип данных являющейся строкой заключённой в (двойные/одинарные/обратные ковычки)
-
-// let age = prompt("Введите возраст") 
-// let name = `Bob ${age} лет` особый вид строк позволяющий подставлять данные динамически в текст
-// let name = 'Bob'
-// let name = "Bob"
-
-// console.log(name);
-
-// let text = `ff
-// ff
-// ff`
-
-
-// Null && Undefined - Оба означают "пустоту", но отличие заключается в присвоении.
-
-// let num = null;
-
-// Object - Сложный тип данных который может хранить в себе коллекцию из большого количества данных.
-
-// let obj = {
-//     num: 56,
-//     text: 'fsdf',
-
+//     window.close()
 // }
 
 
-//Symbol - тип данных уникальный идентификатор 
 
-// let num1 = '1'
-// let num2 = '1'
+// Конструктор switch case 
 
-// console.log('nums result =>', num1 == num2); //true
+// const userAge = prompt("Введите свой возраст")
 
-// let text1 = Symbol('1')
-// let text2 = Symbol('1')
+// switch(Number(userAge)) {
+//     case 16:
+//         alert("Добро пожаловать 16!");
+//         break;
+    
+//     case 17:
+//         alert("Добро пожаловать 17!");
+//         break;
+    
+//     case 18:
+//         alert("Добро пожаловать 18!");
+//         break;
+//     default: 
+//     alert("Сервис недоступен...")
+// }
 
-// console.log('symbol result =>', text1 == text2); //false
-
-// let obj1 = {}
-// let obj2 = {}
-
-// console.log('object result =>', obj1 == obj2); //false
-
-
-// Преобразование типов - Процесс при котором данные преобразовываются из одного типа в другой.
-
-// Явное преобразование типов:
-
-// let num = 54.752
-// console.log(num);
-// console.log(String(num).replace('.', ' '));
-// console.log(num.toString());
-
-// let text = "54.32"
-// let text = "hello"
-
-// console.log(Number(text));
-// console.log(+text)
+// switch(true) {
+//     case userAge >= 18:
+//         alert("Добро пожаловать!");
+//         break;
+    
+//     case userAge == 17:
+//         alert("несовершеннолетний");
+//         break;
+    
+//     case userAge < 17:
+//         alert("школьник");
+//         break;
+//     default: 
+//     alert("Сервис недоступен...")
+// }
 
 
-// Неявное преобразование типов:
 
-// console.log(1 + '1');
+// Тернарный оператор 
 
-console.log('1' + [] + 0);
+// const userAge = prompt("Введите свой возраст")
+
+// userAge >= 18 ? 
+//     alert("Добро пожаловать!") : 
+//         userAge < 12 ?
+//             alert("Ты ребёнок") :
+//                 alert("Сервис недоступен...");
+
+// if(userAge == 18) {
+//     console.log("Добро пожаловать!");
+// }else {
+//     console.log("Сервис недоступен...");
+// }
+
+
+
+// Логические операторы в js 
+
+// 1. && (два амперсанта) - Означает "и", и отдаёт true в случае если два условия являются истинными
+
+// const userAge = prompt("Введите свой возраст")
+
+// if(userAge >= 1 && userAge < 14) {
+//     alert("Ребёнок")
+// }else if(userAge >= 14 && userAge < 18) {
+//     alert("Подросток")
+// }else if (userAge >= 18 && userAge < 40) {
+//     alert("Взрослый")
+// }else if (userAge >= 40 && userAge < 120) {
+//     alert("Пожилой")
+// }else {
+//     alert("Неопределено")
+// }
+
+
+// 2. // - означает "или", возвращает первое истинное значение если хотя бы одно из условий истинно 
+
+// const product = prompt("Введите название овощя или фрукта")
+
+// if(product === 'яблоко' || product === 'banana' || product === 'pineapple') {
+//     alert("Это фрукт")
+// }else if (product === 'potato' || product === 'carrot') {
+//     alert('Это овощь')
+// }else {
+//     alert("Неопределено...")
+// }
+
+
+// 3. ! - означает "не", и возвращает обратное логическое значение
+
+const product = prompt("Введите название овощя или фрукта")
+
+if(product != 'banana') {
+    console.log("Не банан");
+}else if (product !== 'apple') {
+    console.log("Не яблоко");
+}
+
+// console.log(!Boolean(null))
+// console.log(!0)
+// console.log(!1)
+// console.log(!true)
+// console.log(!false)
