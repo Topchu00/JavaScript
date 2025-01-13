@@ -115,8 +115,8 @@ if(product != 'banana') {
     console.log("Не яблоко");
 }
 
-// console.log(!Boolean(null))
-// console.log(!0)
-// console.log(!1)
-// console.log(!true)
-// console.log(!false)
+console.log(!Boolean(null))
+console.log(!0)
+console.log(!1)
+console.log(!true)
+console.log(!false)
