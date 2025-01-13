@@ -1,122 +1,111 @@
-// Условия в js
-// Прописываются с помощью конструктора if else 
+// Постфиксная && Префиксная инкрементация переменной 
 
-// const userName = prompt("Введите желаемый никнейм")
-// const userAge = prompt("Введите свой возраст")
+// Постфиксная инкрементация
+// ++
+// 1. Возвращает текущее значение переменной
+// 2. Увеличивает значение переменной на 1
 
-// console.log(userName);
-// console.log(userAge);
+// let num = 4
+// console.log(num++)
 
-// if(userAge >= 18) {
-//     console.log("Добро пожаловать!")
-// }else if (userAge == 16) {
-//     console.log("Сервис недоступен...")
-// }else {
-//     window.close()
+// console.log(num);
+
+// Префиксная инкрементация
+// ++ - перед переменной
+// 1. Увеличивает значение переменной на 1 и сразу отдает новое значение 
+
+// let num = 4
+// console.log(++num);
+
+
+// Циклы в Js - позволяют выполнить повторяющиеся действия или обходить коллекции по заданным правилам(условиям)
+
+// while (условие) {
+//     тело цикла
+// }
+
+// let count = 1
+
+// while(count < 0) {
+//     console.log(count);
+//     count++
+// }
+
+// Итерация - каждое выполнение блока кода внутри цикла 
+
+// do {выполняемый код} while (условие)
+
+// let count2 = 1
+// do {
+//     console.log(count2);
+//     count2++
+// } while(count2 < 0)
+
+// Отличие while от do{} while() 
+// while(){} - запускается в случае если наше условие истинно 
+// do{} while() - запускается один раз даже если условие не истинно/false
+
+// Бесконечный цикл
+// while(true) {
+//     console.log('Yahoooo');  //НЕ ЗАПУСКАТЬ
+// }
+
+// for(Начало; Условие; Шаг){выполняемый код}
+
+// for(let count = 1; count <= 10; count++) {
+//     console.log(count);
 // }
 
 
-
-// Конструктор switch case 
-
-// const userAge = prompt("Введите свой возраст")
-
-// switch(Number(userAge)) {
-//     case 16:
-//         alert("Добро пожаловать 16!");
-//         break;
+// break && continue
+// break - завершает цикл
+// for(let num = 0; num < 10; num++) {
+//     if(num === 6) {
+//         console.log('Получили нужное нам значение');
+//         break
+//     }
+//     console.log('Итерируемое значение =>', num);
     
-//     case 17:
-//         alert("Добро пожаловать 17!");
-//         break;
+// }
+
+
+// continue - пропускает итерации цикла
+
+// for(let num = 0; num < 10; num++) {
+//     if(num === 7) {
+//         console.log('Получили нужное нам значение');
+//         continue
+//     }
+//     console.log('Итерируемое значение =>', num);
     
-//     case 18:
-//         alert("Добро пожаловать 18!");
-//         break;
-//     default: 
-//     alert("Сервис недоступен...")
 // }
 
-// switch(true) {
-//     case userAge >= 18:
-//         alert("Добро пожаловать!");
-//         break;
-    
-//     case userAge == 17:
-//         alert("несовершеннолетний");
-//         break;
-    
-//     case userAge < 17:
-//         alert("школьник");
-//         break;
-//     default: 
-//     alert("Сервис недоступен...")
+// Работа в убывающем порядке в цикле
+
+// for(let num = 10; num > 0; num--) {
+//     console.log(num);
 // }
 
-
-
-// Тернарный оператор 
-
-// const userAge = prompt("Введите свой возраст")
-
-// userAge >= 18 ? 
-//     alert("Добро пожаловать!") : 
-//         userAge < 12 ?
-//             alert("Ты ребёнок") :
-//                 alert("Сервис недоступен...");
-
-// if(userAge == 18) {
-//     console.log("Добро пожаловать!");
-// }else {
-//     console.log("Сервис недоступен...");
+// for(let num = -10; num >= -20; num--) {
+//     console.log(num);  
 // }
 
+// let num = 0
+// let text = ''
+// let row = (text-1);
+// while(num <= 5) {
 
-
-// Логические операторы в js 
-
-// 1. && (два амперсанта) - Означает "и", и отдаёт true в случае если два условия являются истинными
-
-// const userAge = prompt("Введите свой возраст")
-
-// if(userAge >= 1 && userAge < 14) {
-//     alert("Ребёнок")
-// }else if(userAge >= 14 && userAge < 18) {
-//     alert("Подросток")
-// }else if (userAge >= 18 && userAge < 40) {
-//     alert("Взрослый")
-// }else if (userAge >= 40 && userAge < 120) {
-//     alert("Пожилой")
-// }else {
-//     alert("Неопределено")
+//     console.log(text += '*');
+//     num++
 // }
 
-
-// 2. // - означает "или", возвращает первое истинное значение если хотя бы одно из условий истинно 
-
-// const product = prompt("Введите название овощя или фрукта")
-
-// if(product === 'яблоко' || product === 'banana' || product === 'pineapple') {
-//     alert("Это фрукт")
-// }else if (product === 'potato' || product === 'carrot') {
-//     alert('Это овощь')
-// }else {
-//     alert("Неопределено...")
+// let text = '';
+// let num = 5;
+// let row = (n-1); 
+// for(i=1; i <= n; i++)
+// {
+//     text = text.trim();
+//     a = ' '.repeat(row) + text + (i > 1 ? ' ' : '') + '*';
+//     console.log(text);
+//     row--;
 // }
-
-
-// 3. ! - означает "не", и возвращает обратное логическое значение
-
-const product = prompt("Введите название овощя или фрукта")
-
-if(product != 'banana') {
-    console.log("Не банан");
-}else if (product !== 'apple') {
-    console.log("Не яблоко");
-}
-
-console.log(!Boolean(null))
-console.log(!0)
-console.log(!1)
-console.log(!true)
-console.log(!false)
