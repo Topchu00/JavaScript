@@ -1,111 +1,135 @@
-// Постфиксная && Префиксная инкрементация переменной 
+// функции - js 
+// Функции - это переиспользуемый блок кода в js.
 
-// Постфиксная инкрементация
-// ++
-// 1. Возвращает текущее значение переменной
-// 2. Увеличивает значение переменной на 1
+// const color = prompt('Напишите название цвета')
 
-// let num = 4
-// console.log(num++)
-
-// console.log(num);
-
-// Префиксная инкрементация
-// ++ - перед переменной
-// 1. Увеличивает значение переменной на 1 и сразу отдает новое значение 
-
-// let num = 4
-// console.log(++num);
-
-
-// Циклы в Js - позволяют выполнить повторяющиеся действия или обходить коллекции по заданным правилам(условиям)
-
-// while (условие) {
-//     тело цикла
-// }
-
-// let count = 1
-
-// while(count < 0) {
-//     console.log(count);
-//     count++
-// }
-
-// Итерация - каждое выполнение блока кода внутри цикла 
-
-// do {выполняемый код} while (условие)
-
-// let count2 = 1
-// do {
-//     console.log(count2);
-//     count2++
-// } while(count2 < 0)
-
-// Отличие while от do{} while() 
-// while(){} - запускается в случае если наше условие истинно 
-// do{} while() - запускается один раз даже если условие не истинно/false
-
-// Бесконечный цикл
-// while(true) {
-//     console.log('Yahoooo');  //НЕ ЗАПУСКАТЬ
-// }
-
-// for(Начало; Условие; Шаг){выполняемый код}
-
-// for(let count = 1; count <= 10; count++) {
-//     console.log(count);
+// if(color === 'red') {
+//     let animal = 'monkey'
+//     alert(animal + ' is ' + color);
+// }else if(color === 'yellow') {
+//     let animal = 'monkey'
+//     alert(animal + ' is ' + color);
+// }else if(color === 'white') {
+//     let animal = 'monkey'
+//     alert(animal + ' is ' + color);
+// }else {
+//     alert(animal + 'color is unknown');
 // }
 
 
-// break && continue
-// break - завершает цикл
-// for(let num = 0; num < 10; num++) {
-//     if(num === 6) {
-//         console.log('Получили нужное нам значение');
-//         break
-//     }
-//     console.log('Итерируемое значение =>', num);
+// Виды объявления функций
+// 1. С помощью ключевого слова function - Function Decloration
+
+
+
+// function monkeyColorDefinition () {
+//     console.log("hello world");   
+// }
+// Для того чтобы функция отработала, нужно ее вызвать по ее названию и после названия поставить круглые скобки
+// monkeyColorDefinition()
+
+
+// Параметры и Аргументы функций
+// Параметры - некие переменные объявляемые внутри круглых скобок у функции 
+// Аргументы - передаваемые значения для параметров при вызове функции 
+
+// function monkeyColorDefinition (name = 'Unknown', surname = 'Unknown') {
+//     console.log("hello", name, surname);   
+// }
+
+// monkeyColorDefinition()
+
+
+// const color = prompt('Напишите название цвета')
+
+// if(color === 'red') {
+//     let animal = 'monkey'
+//     alert(animal + ' is ' + color);
+// }else if(color === 'yellow') {
+//     let animal = 'monkey'
+//     alert(animal + ' is ' + color);
+// }else if(color === 'white') {
+//     let animal = 'monkey'
+//     alert(animal + ' is ' + color);
+// }else {
+//     alert(animal + ' color is unknown');
+// }
+
+// let animal = prompt('Напишите название животного')
+// let color = prompt('Напишите название цвета')
+// function monkeyColorDefinition(beast, color) {
+//     alert("color of " + beast + " is " + color);
+//     console.log("color of ", beast, " is ", color);
+// }
+
+// monkeyColorDefinition(animal, color)
+
+
+
+
+// Область видимости:  
+// 1.Глобальная
+// 2.Функциональная
+
+// let name = "Azat"
+// let surname = "Sheishenov"
+
+// function scope() {
+//     let name = 'Aisha'
+//     let surname = "Esengulov"
+//     console.log(name, surname);
+// }
+
+
+// scope()
+
+// console.log(name, surname);
+
+// let name = "Azat"
+// let surname = "Sheishenov"
+
+// function scopeIncludeScope(data) {
+//     console.log(data);
     
 // }
 
-
-// continue - пропускает итерации цикла
-
-// for(let num = 0; num < 10; num++) {
-//     if(num === 7) {
-//         console.log('Получили нужное нам значение');
-//         continue
+// function scope(user, fullname) {
+//     let data = {
+//         user: user,
+//         fullname: fullname
 //     }
-//     console.log('Итерируемое значение =>', num);
+//     scopeIncludeScope(data)
+// }
+
+// scope(name, name + " " + surname)
+
+
+
+// 2. Функции-Выражения(Function Expression)
+
+// const expressionFunction = function(name, surname) {
+//     console.log("hello", name, surname);
     
 // }
 
-// Работа в убывающем порядке в цикле
+// expressionFunction('topchu', 'orozbekov')
 
-// for(let num = 10; num > 0; num--) {
-//     console.log(num);
+// Отличие Function Expression от Function Decloration
+
+
+// const expressionFunction = function(name, surname) {
+//     console.log("hello", name, surname);
+    
 // }
 
-// for(let num = -10; num >= -20; num--) {
-//     console.log(num);  
+// expressionFunction('topchu', 'orozbekov')
+
+
+
+// function scopeIncludeScope(data) {
+//     console.log(data);
+    
 // }
 
-// let num = 0
-// let text = ''
-// let row = (text-1);
-// while(num <= 5) {
-
-//     console.log(text += '*');
-//     num++
-// }
-
-// let text = '';
-// let num = 5;
-// let row = (n-1); 
-// for(i=1; i <= n; i++)
-// {
-//     text = text.trim();
-//     a = ' '.repeat(row) + text + (i > 1 ? ' ' : '') + '*';
-//     console.log(text);
-//     row--;
-// }
+// 3. Стрелочные функции | Arrow function
+// ()
