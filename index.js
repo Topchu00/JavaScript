@@ -1,135 +1,101 @@
-// функции - js 
-// Функции - это переиспользуемый блок кода в js.
+// Отличие Function Decloration от Function Expression
 
-// const color = prompt('Напишите название цвета')
-
-// if(color === 'red') {
-//     let animal = 'monkey'
-//     alert(animal + ' is ' + color);
-// }else if(color === 'yellow') {
-//     let animal = 'monkey'
-//     alert(animal + ' is ' + color);
-// }else if(color === 'white') {
-//     let animal = 'monkey'
-//     alert(animal + ' is ' + color);
-// }else {
-//     alert(animal + 'color is unknown');
+// SayHello("sadfsdf")
+// function SayHello(name) {
+//     console.log(name);  
 // }
 
-
-// Виды объявления функций
-// 1. С помощью ключевого слова function - Function Decloration
+// SayHello("sdfsdf")
 
 
+// Возврат каких-то данных из функции
+// Ключевое слово return позволяет вернуть результат выполнения кода из функции 
 
-// function monkeyColorDefinition () {
-//     console.log("hello world");   
-// }
-// Для того чтобы функция отработала, нужно ее вызвать по ее названию и после названия поставить круглые скобки
-// monkeyColorDefinition()
-
-
-// Параметры и Аргументы функций
-// Параметры - некие переменные объявляемые внутри круглых скобок у функции 
-// Аргументы - передаваемые значения для параметров при вызове функции 
-
-// function monkeyColorDefinition (name = 'Unknown', surname = 'Unknown') {
-//     console.log("hello", name, surname);   
+// function getAnimalColor(animal = 'unknown', color = 'unknown') {
+//     return `${animal} color is ${color}`    
+//     return true 
 // }
 
-// monkeyColorDefinition()
+// let animalcolor = getAnimalColor('Dog', 'black')
 
+// console.log("variable animalColor => ", animalcolor);
 
-// const color = prompt('Напишите название цвета')
-
-// if(color === 'red') {
-//     let animal = 'monkey'
-//     alert(animal + ' is ' + color);
-// }else if(color === 'yellow') {
-//     let animal = 'monkey'
-//     alert(animal + ' is ' + color);
-// }else if(color === 'white') {
-//     let animal = 'monkey'
-//     alert(animal + ' is ' + color);
-// }else {
-//     alert(animal + ' color is unknown');
-// }
-
-// let animal = prompt('Напишите название животного')
-// let color = prompt('Напишите название цвета')
-// function monkeyColorDefinition(beast, color) {
-//     alert("color of " + beast + " is " + color);
-//     console.log("color of ", beast, " is ", color);
-// }
-
-// monkeyColorDefinition(animal, color)
-
-
-
-
-// Область видимости:  
-// 1.Глобальная
-// 2.Функциональная
-
-// let name = "Azat"
-// let surname = "Sheishenov"
-
-// function scope() {
-//     let name = 'Aisha'
-//     let surname = "Esengulov"
-//     console.log(name, surname);
-// }
-
-
-// scope()
-
-// console.log(name, surname);
-
-// let name = "Azat"
-// let surname = "Sheishenov"
-
-// function scopeIncludeScope(data) {
-//     console.log(data);
-    
-// }
-
-// function scope(user, fullname) {
-//     let data = {
-//         user: user,
-//         fullname: fullname
+// const returnUndefined = (userAge) => {
+//     if(userAge < 18) {
+//         return;
 //     }
-//     scopeIncludeScope(data)
-// }
 
-// scope(name, name + " " + surname)
-
-
-
-// 2. Функции-Выражения(Function Expression)
-
-// const expressionFunction = function(name, surname) {
-//     console.log("hello", name, surname);
+//     console.log("Добро пожаловать");
     
 // }
 
-// expressionFunction('topchu', 'orozbekov')
+// const age = prompt("Введите возраст")
 
-// Отличие Function Expression от Function Decloration
+// console.log(returnUndefined(age));
 
 
-// const expressionFunction = function(name, surname) {
-//     console.log("hello", name, surname);
-    
+// Рекурсивные функции - это функции, которые вызывают сами себя
+
+// let count = 0
+// let finish = 100
+// const recursionFunction = () => {
+//     console.log(count);
+//     count += 1
+//     if(count <= finish) {
+//         recursionFunction()
+//     }else {
+//         return;
+//     }
 // }
 
-// expressionFunction('topchu', 'orozbekov')
+// recursionFunction()
 
+// let user = prompt("Введите значение")
+// if (user === 180) console.log("Success user is 180");
 
+// const anonimFunction = function () {return 180}
 
-// function scopeIncludeScope(data) {
-//     console.log(data);
-    
+// const anonimFunction = () => (180 * 5 / 12 + 300)
+// let result = anonimFunction()
+// console.log(result)
+
+// function anonimFunction (num1, num2) {
+//     return (180 * num1 / 12 + 300 + num2)
 // }
 
-// 3. Стрелочные функции | Arrow function
-// ()
+// let getResult = anonimFunction
+// let getResult1 = anonimFunction
+// let getResult2 = anonimFunction
+// console.log(getResult(2, 3));
+// console.log(getResult1(12, 32));
+// console.log(getResult2(3 , 4));
+
+
+// console.log(getResult);
+// console.log(getResult1);
+// console.log(getResult2);
+
+
+
+// Массивы - это некий объект который может хранить в себе коллекцию из разных значений
+
+// 1. Способ создания массивов через []
+// const arr = ['Aisha', 'Nursuluu', 'Topchu']
+// console.log(arr[0]);
+
+// 2. Способ создания массивов с помощью конструктора new Array
+// const arr = new Array(1,2, {}, 4, true, '233')
+// console.log(arr);
+
+
+// Перебор массива с помощью циклов
+
+// const arr = ['Aisha', 'Nursuluu', 'Topchu']
+
+// for(let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// arr.map(el => {
+//     console.log(el);
+// })
