@@ -1,101 +1,117 @@
-// Отличие Function Decloration от Function Expression
+// Объекты в js - это тип данных, умеющий хранить большие коллекции разных типов данных, как пара из "<Ключ: значение>"
 
-// SayHello("sadfsdf")
-// function SayHello(name) {
-//     console.log(name);  
+// Способы создания объектов 
+// 1. Создание с помощью конструктора new Object()1
+// const obj1 = new Object()
+
+// 2. Создание с помощью {}
+
+// const obj = {}
+
+// Свойство объекта это => Пара <Ключ:значение>
+
+// const user = {
+//     name: "Topchu",
+//     age: 17,
+//     gender: "male"
 // }
 
-// SayHello("sdfsdf")
+// 1. способ получения свойства объекта
+// console.log(user.name);
+
+// 2. способ получения свойства объекта
+// console.log(user['age']);
 
 
-// Возврат каких-то данных из функции
-// Ключевое слово return позволяет вернуть результат выполнения кода из функции 
+// let user1 = "Alice"
 
-// function getAnimalColor(animal = 'unknown', color = 'unknown') {
-//     return `${animal} color is ${color}`    
-//     return true 
-// }
+// let user2 = user1;
 
-// let animalcolor = getAnimalColor('Dog', 'black')
+// user1 = 'Rustam'
 
-// console.log("variable animalColor => ", animalcolor);
+// console.log(user1);
+// console.log(user2);
 
-// const returnUndefined = (userAge) => {
-//     if(userAge < 18) {
-//         return;
+// let obj1 = {
+//     name:"Topchu"
+// } // Хранит ссылку на объект
+
+// let obj2 = obj1; // obj2 хранит ссылку на тот же объект
+
+// obj1.name = "Aisha"
+
+// console.log(obj1);
+// console.log(obj2);
+
+// const obj = {
+//     name: '',
+    // getAnimal: (animal) => {
+    //     console.log(animal);
+        
+    // }
+//     getAnimal () {
+//         return "Monkey"
 //     }
+// }
 
-//     console.log("Добро пожаловать");
+// obj.name = "Aisha"
+
+// console.log(obj.name);
+
+// console.log(obj.getAnimal());
+
+
+// const obj = {
+//     key: "value",
+//     "key and value": {
+//         name: "name"
+//     },
+// }
+
+// console.log(obj["key and value"]);
+
+// Перебор объектов
+
+// const obj = {
+//     name: "Topchu",
+//     surname: "Orozbekov",
+//     age: 17,
+//     sayHello: () => {
+//         alert("Hello")
+//     }
+// }
+
+// // for in 
+
+// for (let key in obj) {
+//     console.log(obj[key]);
+// }
+
+
+let students = {
+    Ivan: 5,
+    Maria: 4,
+    Sergey: 3,
+    Anna: 5,
+    Oleg: 2,
+}
+
+students = function getGradeStatus(grade) {
+    if(grade === 5) {
+        return "Отлично"
+    }else if (grade === 4) {
+        return "Хорошо "
+    }else if (grade === 3) {
+        return "Удовлетворительно"
+    }else if (grade === 2 && grade === 1) {
+        return "Неудовлетворительно"
+    }else {
+        return "Ошибка"
+    }
+}
+
+for (let key in students) {
+    console.log(key[students]);
     
-// }
+}
 
-// const age = prompt("Введите возраст")
-
-// console.log(returnUndefined(age));
-
-
-// Рекурсивные функции - это функции, которые вызывают сами себя
-
-// let count = 0
-// let finish = 100
-// const recursionFunction = () => {
-//     console.log(count);
-//     count += 1
-//     if(count <= finish) {
-//         recursionFunction()
-//     }else {
-//         return;
-//     }
-// }
-
-// recursionFunction()
-
-// let user = prompt("Введите значение")
-// if (user === 180) console.log("Success user is 180");
-
-// const anonimFunction = function () {return 180}
-
-// const anonimFunction = () => (180 * 5 / 12 + 300)
-// let result = anonimFunction()
-// console.log(result)
-
-// function anonimFunction (num1, num2) {
-//     return (180 * num1 / 12 + 300 + num2)
-// }
-
-// let getResult = anonimFunction
-// let getResult1 = anonimFunction
-// let getResult2 = anonimFunction
-// console.log(getResult(2, 3));
-// console.log(getResult1(12, 32));
-// console.log(getResult2(3 , 4));
-
-
-// console.log(getResult);
-// console.log(getResult1);
-// console.log(getResult2);
-
-
-
-// Массивы - это некий объект который может хранить в себе коллекцию из разных значений
-
-// 1. Способ создания массивов через []
-// const arr = ['Aisha', 'Nursuluu', 'Topchu']
-// console.log(arr[0]);
-
-// 2. Способ создания массивов с помощью конструктора new Array
-// const arr = new Array(1,2, {}, 4, true, '233')
-// console.log(arr);
-
-
-// Перебор массива с помощью циклов
-
-// const arr = ['Aisha', 'Nursuluu', 'Topchu']
-
-// for(let i = 0; i < arr.length; i++) {
-//     console.log(arr[i]);
-// }
-
-// arr.map(el => {
-//     console.log(el);
-// })
