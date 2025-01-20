@@ -88,30 +88,46 @@
 // }
 
 
-let students = {
-    Ivan: 5,
-    Maria: 4,
-    Sergey: 3,
-    Anna: 5,
-    Oleg: 2,
-}
 
-students = function getGradeStatus(grade) {
-    if(grade === 5) {
-        return "Отлично"
-    }else if (grade === 4) {
-        return "Хорошо "
-    }else if (grade === 3) {
-        return "Удовлетворительно"
-    }else if (grade === 2 && grade === 1) {
-        return "Неудовлетворительно"
-    }else {
-        return "Ошибка"
-    }
-}
+// let best = ""
+// const students = {
+//     Topchubai: 5,
+//     Aisha: 4,
+//     Rustam: 3,
+//     Tilek: 5,
+//     Nursuluu: 4,
+//     Ramazan: 3,
+//     Alya:5,
+//     Emir:3
+// }
 
-for (let key in students) {
-    console.log(key[students]);
-    
-}
+// function getGradeStatus(grade) {
+//     if(grade === 5) {
+//         return `${grade} - Отлично`
+//     }else if (grade === 4) {
+//         return `${grade} - Хорошо`
+//     }else if (grade === 3) {
+//         return `${grade} - Удовлетворительно`
+//     }else if (grade === 2 || grade === 1) {
+//         return `${grade} - Неудовлетворительно`
+//     }else {
+//         return "Ошибка"
+//     }
+// }
 
+// for (let key in students) {
+//     let grade = students[key];
+//     let status = getGradeStatus(grade);
+//     if (grade === 5) {
+//         if (best === "") {
+//             best = key; 
+//         } else {
+//             best += ", " + key; 
+//         }
+//     }
+//     console.log(key + ": " + status);
+// }
+
+// console.log("Число отличников: " + best);
+
+   
