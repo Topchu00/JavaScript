@@ -46,17 +46,9 @@
 // let sum = 0 
 
 // for(let i = 0; i < numbers.length; i++) {
-//     if(i > 0) {
-//         sum += numbers[i]
+//     if(numbers[i] > 0) {
+//         sum += numbers[i];
 //     }
-// }
-
-// console.log(sum);
-
-// const arr = [1, 2, 3, 4, 5];
-// let sum = 0;
-// for (let i = 0; i < arr.length; i++) {
-//   sum += arr[i];
 // }
 
 // console.log(sum);
@@ -94,23 +86,43 @@
 
 // 6. С помощью цикла for сформируйте строку '987654321' и запишите ее в переменную str
 
-// let str = []
+// let str = ''
 // for(let i = 9; i >= 1; i--) {
 //     str += i
     
 // }
+
 // console.log(str);
 
 
 // 7. С помощью цикла for сформируйте строку '-1-2-3-4-5-6-7-8-9-' и запишите ее в переменную str.
 
-// str = "" 
+// let str = ''
+
 // for(let i = 1; i < 10; i++) {
-//     console.log(i);
-    
+//     str += -${i}
 // }
 
-// console.log(toString(str));
+// str += '-'
+
+// console.log(str);
+
+
+// 8. Заполните массив следующим образом: в первый элемент запишите '1', во второй '22', в третий '333' и так далее.
+
+// let n = 8; // Размер массива (можно изменить на нужное значение)
+// let arr = [];
+
+// for (let i = 1; i <= n; i++) {
+//     let str = "";
+//     for (let j = 0; j < i; j++) {
+//         str += i;
+//     }
+//     arr[i - 1] = str; // Прямое присваивание элемента массива
+// }
+
+// console.log(arr);
+
 
 // 9. Найдите сумму всех чисел от 1 до 100
 
@@ -120,3 +132,29 @@
 // }
 // console.log(sum);
 
+
+// 10. Создайте функцию countProperties(obj), которая принимает объект и возвращает количество его собственных свойств.
+
+// function countProperties(obj) {
+//     let count = 0;
+//     for (let key in obj) {
+//       if (obj[key] !== undefined || key in obj) {
+//         count++;
+//       }
+//     }
+//     return count;
+//   }
+  
+
+// const numericValues = {
+//     age: 20,
+//     height: 175,
+//     weight: 70,
+//     salary: 50000,
+//     experienceYears: 3,
+//     projectsCompleted: 15,
+//     rating: 4.8,
+//     tasksPerDay: 10
+// };
+
+// console.log(countProperties(numericValues));
