@@ -132,4 +132,17 @@
 // }
 
 // 3. Стрелочные функции | Arrow function
-// ()
+
+// Отличий от остальных типов функций 2: 
+// 1. Синтаксис
+// 2. Контекст this 
+// const arrowFunction = () => {
+//     console.log('test');
+// }
+
+// arrowFunction()
+
+// 4. Самовызывающиеся фукнции - IIFE
+// (function(){
+//     console.log('test');
+// })()
