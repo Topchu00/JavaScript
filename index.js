@@ -1,202 +1,144 @@
-// Копирование объектов
-
-// const name = 'Azim'
-// const cloneName = name
-
-// console.log('cloneName === name', cloneName === name);
+// Контекст - Js
 
 // const user = {
-//     name: "Azat",
-//     age: 25,
-//     password: '123456'
+//     name: 'Emir',
+//     age: '14',
+
+//     sayHello () {
+//         console.log(`Hello. My name is ${this. name}. I'm ${this.age} years old`);
+        
+//     }
 // }
 
-// const cloneUser = user
-// cloneUser.name = "Madina"
+// user.sayHello()
 
-// console.log('cloneuser', cloneUser);
-// console.log('user', user);
 
-// Первый способ копирования объектов через цикл for in 
+// Конструктор new
+// class 
 
-// const cloneUser = {}
+// class User {
+//     skin = 'black'
+//     hair = 'black'
 
-// for(let key in user) {
-//     cloneUser[key] = user[key]
-//     // console.log(cloneUser);
+//     constructor(name, age) {
+//         this.name = name
+//         this.age = age
+//     }
+
+//     sayHello () {
+//         console.log("Hello my name is " + this.name);
+        
+//     }
 // }
 
-// cloneUser.email = 'asdfsfsdf'
 
-// console.log('cloneuser', cloneUser);
-// console.log('user', user);
+// const topchu = new User("Topchu", 16)
+// const rus = new User("Rustam", 40)
 
+// console.log(topchu);
+// console.log(rus);
 
-// Второй способ копирования объектов через метод assign
-
-// const user = {
-//     name: "Azat",
-//     age: 25,
-//     password: '123456'
-// }
-
-// const userId = {
-//     id: 12
-// }
-
-// const userStatus = {
-//     status: 'mentor'
-// }
-
-// // Object.assign(user, userId, userStatus)
-
-// const newUser = {
-//     name: 'Azim'
-// }
-// Object.assign(newUser, user, userStatus, userId)
-
-// console.log('newUser', newUser);
-
-
-// Третий способ копирования объектов через спредоператор
-
-// const user = {
-//     name: "Azat",
-//     age: 25,
-//     password: '123456'
-// }
-
-// const userId = {
-//     id: 21
-// }
-
-// const newUser = {...user, ... userId}
-// // const newUser = {...user.age}
-// newUser.name = "Azim"
-// console.log('user', user);
-// console.log('newUser', newUser);
+// rus.sayHello()
+// topchu.sayHello()
 
 
 
-// НЕЛЬЗЯ ТАК ДЕЛАТЬ!!
-// const user = {
-//     name: "Azat",
-//     age: 25,
-//     password: '123456'
-// }
+// function createUser (name, age) {
+//     let cthis = {}
+//     cthis.skin = 'black'
+//     cthis.hair = 'black'
 
-// const newUser = user
-
-// newUser.name = 'Madina'
-
-// console.log('user', user);
-// console.log('newUser', newUser);
-
-
-
-
-
-
-// this
-
-// a = 'Hello world'
-
-// console.log(this.alert("hello world"));
-
-// console.log(this === window);
-// name = 'Rustam'
-// function hello() {
-//     console.log(this.name);
     
-// }
+//     cthis.name = name
+//     cthis.age = age
 
-// const person = {
-//     name: "Azim",
-//     sayHello : hello
-// }
-
-// const persontwo = {
-//     name: "Madina",
-//     sayHello : hello
-// }
-
-// person.sayHello()
-// persontwo.sayHello()
-// hello()
-
-
-
-// const sayHello = () => {
-//     console.log("Hello world");
+//     return cthis
 // }
 
 
-// sayHelloFunc()
+// const nursuluu = createUser("Nursuluu", 18)
 
-// function sayHelloFunc() {
-//     console.log("Hello world");
-    
-// }
-
-// sayHelloFunc()
-
-
-// Передать контекст
-
-// function sayHello(email, gender) {
-//     console.group(`${this.name} Info`)
-//     console.log(`Hello ${this.name}. age: ${this.age}, password: ${this.password}`);
-//     console.log('email: ' + email);
-//     console.log('gender: ' + gender);
-//     console.groupEnd();
-    
-// }
-
-// const userAzat = {
-//     name: 'Azat',
-//     age: 23,
-//     password: '1234',
-//     // hello: sayHello
-// }
-
-// const userAzim = {
-//     name: "Azim",
-//     age: 25,
-//     password: '123456',
-//     hello: sayHello  // bind(userAzat)        // this не является userAzim, а userAzat
-// }
-
-// userAzim.hello.bind(userAzat, 'asdasd', 'asdasd')() 
-// userAzim.hello.call(userAzat, 'asdasd', 'asdasd')
-// userAzim.hello.apply(userAzim, ['asdasd', 'asdasd'])
-
-
-// userAzim.hello.call(userAzat)
-
-// userAzim.hello()
-// userAzat.hello()
+// console.log(nursuluu);
 
 
 
 
-
-// Конструктор, оператор "new"
-
-// function User(name) {
-//     // this {}
+// function createUser (name, age) {
 //     this.name = name
-//     this.status = 'student'
-//     this.group = 'js-15'
+//     this.age = age
 
-//     // return {} 
+//     return
+//     // return this // { name: "Azim", age:23}
 // }
 
-// // const studentRamazan = new User('Ramazan')
+// const userAzim = new createUser("Azim", 23)
 
-// const students = ['Ramazan', 'Topchubai', 'Aisha', 'Rustam']
-// const studentsObjArr = []
-// for(let i = 0; i < students.length; i++) {
-//     studentsObjArr.push(new User(students[i]))
+// console.log(userAzim);
+
+
+
+// Массивы в Js
+// Тип данных - Jbject
+
+// Способы объявления массива
+
+// 1. С помощью квадратных скобок []
+
+// const arr = []
+
+// 2. С помощью конструктора new Array
+
+// const arr = new Array()
+
+// console.log((arr));
+
+// const arr = ['aisha', 18, {}, null, true]
+
+// console.log(arr);
+
+// const arr1 = []
+// const arr2 = []
+
+// console.log(arr1 == arr2);
+
+// Методы массивов
+
+// const arr = ['aisha', 18, {}, null, true]
+
+// push - добавляет в конец массива
+// arr.push(21)
+
+// unshift - добавляет в начало массива
+// arr.unshift('homie')
+
+// shift - удаляет в начале массива
+// arr.shift()
+
+// pop - удаляет в конце массива
+// arr.pop()
+
+// // map
+// let num = 0
+// arr.map((item, index, array) => {
+    // console.log('item =>', item);
+    // console.log('index =>', index);
+    // console.log('array =>', array);
+    
+// })
+
+// for(let i = 0; i <= arr.length; i++) {
+//     console.log(arr[i]);
+    
+// }
+// console.log(arr);
+
+
+// const getUsers = async () => {
+//     const req = await fetch('https://jsonplaceholder.typicode.com/users')
+//     const res = await req.json()
+    
+    
 // }
 
-// console.log(studentsObjArr);
+// getUsers()
+
