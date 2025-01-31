@@ -1,189 +1,223 @@
-// Методы массивов
+// Деструктуризация в Js
 
-// push - для вставки какого-то элемента в конец массива
+// Деструктуризация - это удобный способ извлечь необходимые свойства из объекта или массива и присвоить их переменным
 
-// const arr = [1, 2, 3, 4, 5]
-// arr.push(6)
+// const obj1 = {
+//     name: 'Kenny',
+//     age: 25,
+//     country: 'Canada',
+//     job: {
+//         position: 'junior frontend develop',
+//         experience: '1 year',
+//         salary: '$600'
+//     }
+// }
 
-//  pop - удалить элемент в конце массива
-// const arr = [1, 2, 3, 4, 5]
-// arr.pop()
-
-// shift - для удаления первого элемента массива
-// const arr = [1, 2, 3, 4, 5]
-// arr.shift()
-
-// unshift - добавляет элемент в начало массива
-// const arr = [1, 2, 3, 4, 5]
-// arr.unshift(0)
-
-// map - Позвволяет перебрать каждый элемент массива и на выходе возвращает новый массив
-// const arr = [1, 2, 3, 4, 5]
-// const arrCopy = arr.map((item, idx, array) => {
-    // console.log('item =>', item);
-    // console.log('idx =>', idx);
-    // console.log('array =>', array);
-    // return item
-// })
-
-// arr.push(1)
-// arr.pop()
-// console.log(arr);
-// console.log(arrCopy);
-// console.log(arr == arrCopy);
+// const obj2 = {
+//     name: 'John',
+//     age: 30,
+//     country: 'USA',
+//     job: {
+//         position: ' middle frontend develop',
+//         experience: '3 years',
+//         salary: '$5000'
+//     }
+// }
 
 
-// filter - Позвволяет перебрать каждый элемент массива и в зависимости от условия возвращает новый массив 
+// let a = 52
+// b = 22
+// c = 123
 
-// const arr = [1, 2, 3, 4, 5]
-// const arrCopy = arr.filter((item, idx, array) => item % 2 == 0)
+// console.log(a);
+// console.log(b);
+// console.log(c);
 
+// const {name, age, country, job: {position, experience, salary}} = obj
 
-// console.log(arr);
-// console.log(arrCopy);
+// console.log(job); // при вложенной деструктуризации теряется доступ к свойству job
 
-// forEach - Позвволяет перебрать каждый элемент массива но не возвращает новый массив
-
-// const nums = [1, 2, 3, 4, 5]
-
-// const result = nums.forEach((item, idx) => {
-//     console.log('item and idx =>', `${item}-${idx}`);
-//     if(idx == 2) item ++ 
-//     if(item == 5) item -- 
-// })
-
-// nums.push(4)
-// nums.shift()
-
-// console.log('nums =>', nums);
-// console.log('result =>', result);
-
-// find - Позволяет по условию найти нужный элемент массива
-
-// const animals = ['cat', 'dog', 'fish', 'lion', 'monkey']
-
-// const findAnimal = animals.find((item) => item === 'cat')
-
-// console.log(findAnimal);
-
-// splice - Позволяет удалить элементы массива начиная от указонного  start какое-то количество элементов
-
-// const animals = ['cat', 'dog', 'fish', 'lion', 'monkey']
-
-// animals.splice(3, 1)
-// console.log(animals);
-
-// Начиная со 2 элемента массиваб удаляем 0 элементов и добавляем новые 3 элемента
-// animals.splice(2, 0, 'shark')
-// console.log(animals);
+// console.log(position, experience, salary);
 
 
-// Удаление всех элементов массива 
+// Деструктурирующее присваивание с переименованием переменных
+// const {name: obj1Name} = obj1
+// const {name: obj2Name} = obj2
 
-// const animals = ['cat', 'dog', 'fish', 'lion', 'monkey']
-
-// animals.splice(1)
-// console.log(animals);
-
-
-// reverse - получаем исходный массив в обратном порядке
-
-// const nums = [1, 2, 3, 4, 5]
-
-// nums.reverse()
-// console.log(nums);
+// console.log(obj1Name);
+// console.log(obj2Name);
 
 
-// concat - Объеденяет массивы и возвращает новый массив
+// Деструктуризация массива
 
-// const nums = [1, 2, 3, 4, 5]
-// const animals = ['cat', 'dog', 'fish', 'lion', 'monkey']
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-// const result = nums.concat(animals, [1, true], [{}])
-// console.log(result);
+// const [a, b, c, d, e, f, g, h, i] = arr  // первая переменная === первый элемент массива
 
+// console.log(a, b, c, d, e, f, g, h, i);
 
-// 1. Дан массив сотрудников. Нужно найти всех сотрудников с зарплатой больше 100_000 и у которых должность "Senior".( объект из 5 сотрудников )
-// const persons = [
+// const arr = [[1, 2, 3, 4], [5, 6, 7, 8, 9, 10, 11]]  // элементы что не нужны можно пропустить не присваивая в переменную
+
+// const [[a, b, c], [o, t, , , , y]] = arr
+
+// console.log(a);
+// console.log(c);
+
+// console.log(o);
+// console.log(t);
+// console.log(y); 
+
+// const arr = [{name: 'Kira', age: 18}, {name: 'John', age: 30}]
+
+// const [{name: kira, age: kiraAge}, {name: john, age:johnAge}] = arr
+
+// console.log(kira, kiraAge);
+// console.log(john, johnAge);
+
+// const arr = [
 //     {
-//         name: 'Topchu',
-//         salary: 50000,
-//         post: 'jr'
-//     },
-
-//     {
-//         name: 'Ramazan',
-//         salary: 160000,
-//         post: 'senior'
-//     },
-
-//     {
-//         name: 'Azat',
-//         salary: 90000,
-//         post: 'senior'
-//     },
-
-//     {
-//         name: 'Azim',
-//         salary: 180000,
-//         post: 'senior'
-//     },
-
-//     {
-//         name: 'Rustam',
-//         salary: 130000,
-//         post: 'mid'
+//         name: 'Kira',
+//         experience: {
+//             frontend: '1 year',
+//             backend: '0.5 year'
+//         },
+//         companies: ['Google', 'Yandex', 'Apple'],
+//         companiesSalary: {
+//             google: 1000,
+//             yandex: 500,
+//             apple: 2000
+//         }
 //     }
 // ]
 
-// const result = persons.filter((item) => item.salary > 100000 && item.post == 'senior')
+// const [{name, experience: {frontend, backend}, companies: [google, yandex, aple],  companiesSalary: {apple}}] = arr
+
+// console.log(name, frontend, backend, google, yandex, aple, apple);
+
+
+// rest и spread оператор в js
+
+// ... - rest оператор
+// ... - spread оператор
+
+// const obj1 = [
+//     {
+//         name: 'Kira',
+//         experience: {
+//             frontend: '1 year',
+//             backend: '0.5 year'
+//         },
+//         companies: ['Google', 'Yandex', 'Apple'],
+//         companiesSalary: {
+//             google: 1000,
+//             yandex: 500,
+//             apple: 2000
+//         }
+//     }
+// ]
+
+// const obj2 = {...obj1}
+
+// obj2.name = 'John'
+
+// console.log(obj1);
+// console.log(obj2);
+
+// rest оператор
+
+// const [{name, companies, ...otherProperties}] = obj1
+
+// companies.push('Microsoft')
+
+// console.log(name, companies);
+// console.log(otherProperties);
+
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// const [a, b, ...otherElements] = arr
+// console.log(a, b);
+// console.log(otherElements);
+
+// const calcAllValues = (...args) => {
+//     let num = 0
+//     for (let i = 0; i <args.length; i++) {
+//         num += args[i]
+//     }
+//     return num
+// }
+
+// const result = calcAllValues(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
 
 // console.log(result);
 
 
-// 2. Напиши функцию, которая проверяет, является ли слово палиндромом (читается одинаково слева направо и справа налево).
 
-// const word = ['ш', 'а', 'л', 'а', 'ш']
+// spread оператор
 
-// const reverseword = word.filter((array) => {
-//     if(array = word.reverse())
-//         return true
-// })
+// const obj1 = {
+//     name: 'Kira',
+//     experience: {
+//         frontend: '1 year',
+//         backend: '0.5 year'
+//     },
+//     companies: ['Google', 'Yandex', 'Apple'],
+//     companiesSalary: {
+//         google: 1000,
+//         yandex: 500,
+//         apple: 2000
+//     }
+// }
 
-// console.log(reverseword);
+// const obj2 = {
+//     address: 'London',
+//     phone: '123456789'
+// }
+
+// const obj3 = {...obj1, ...obj2, age: 25, country: 'USA'}
+
+// console.log(obj3);
+
+// const arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// const arr2 = [ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+// const arr3 = [...arr1, ...arr2]
+
+// console.log('arr1 => ', arr1);
+// console.log('arr2 => ', arr2);
+// console.log('arr3 =>', arr3);
 
 
-// 3. Дан массив чисел. Нужно посчитать, сколько в нем четных и нечетных чисел.
+// const obj1 = {
+//     name: 'Kira',
+//     experience: {
+//         frontend: '1 year',
+//         backend: '0.5 year'
+//     },
+//     companies: ['Google', 'Yandex', 'Apple'],
+//     companiesSalary: {
+//         google: 1000,
+//         yandex: 500,
+//         apple: 2000
+//     }
+// }
 
-// const nums = [1, 3, 6, 7, 4, 8, 2, 9, 10, 5, 12]
+// const obj2 = {
+//     address: 'London',
+//     phone: '123456789'
+// }
 
-// const even_numbers = nums.filter((item) => item % 2 == 0)
-// const odd_numbers = nums.filter((item) => item % 2 != 0)
+// const ExampleFunction = ({name, experience, phone, ...otherData}) => {
+//     console.log('name =>', name);
+//     console.log('experience =>', experience);
+//     console.log('phone =>', phone);
+//     console.log('otherData =>', otherData);
+// }
 
-// console.log('Количество чётных чисел: ', even_numbers.length);
-// console.log('Количество нечётных чисел: ', odd_numbers.length);
+// const result = ExampleFunction({...obj1, ...obj2, age:25, country: 'USA'})  // spread в использовании с функциями
 
-
-
-// 4. Дан массив. Найди элемент, который встречается чаще всего.
-
-// const animals = ['cat', 'dog', 'cat', 'rat', 'elephant', 'eagle', 'cat', 'bird', 'dog', 'bull']
-
-// const findAnimal = animals.find((item) => item === 'cat')
-
-// console.log(findAnimal);
-
-
-
-// 6. Дан массив чисел. Найди сумму четных и нечетных чисел по отдельности.
-
-// const nums = [1, 3, 6, 7, 4, 8, 2, 9, 10, 5, 12]
-// let sum = 0
-
-// const even_numbers = nums.filter((item) => item % 2 == 0)
-// const odd_numbers = nums.filter((item) => item % 2 != 0)
-
-// sum += even_numbers
-
-// console.log('Сумма чётных чисел: ', sum);
+// console.log('test', true, false, {}, [], 12, 54, 'Hello world', 'Test', 1, 2, 3, 4, 5, 6, 7, 8, 9);
+// console.error('test', true, false, {}, [], 12, 54, 'Hello world', 'Test', 1, 2, 3, 4, 5, 6, 7, 8, 9);
+// console.warn('test', true, false, {}, [], 12, 54, 'Hello world', 'Test', 1, 2, 3, 4, 5, 6, 7, 8, 9);
+// console.info('test', true, false, {}, [], 12, 54, 'Hello world', 'Test', 1, 2, 3, 4, 5, 6, 7, 8, 9)
 
